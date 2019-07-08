@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './Home';
+import HomeNoHydrate from './HomeNoHydrate';
 import App from '../App';
 
 const InitialPropsRoutes = ({ component: Component, ...rest }) => (
@@ -11,6 +12,7 @@ const AppRouter = () => {
     return (
         <Router>
             <InitialPropsRoutes path="/" exact component={Home} />
+            <InitialPropsRoutes path="/withoutHydration" exact component={HomeNoHydrate} />
         </Router>
     );
 }

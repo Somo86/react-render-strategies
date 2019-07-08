@@ -3,6 +3,7 @@ import path from 'path'
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import Home from '../client/pages/Home';
+import HomeNoHydrate from '../client/pages/HomeNoHydrate';
 import App from '../client/App';
 import template from './template';
 
@@ -26,13 +27,17 @@ app.get('/', (req, res) => {
   );
 });
 
-app.get('/list', (req, res) => {
+app.get('/withoutHydration', (req, res) => {
   Home.getInitialProps().then(
     response => {
-      const component = ReactDOMServer.renderToString(<Home {...response} />)
+      const component = ReactDOMServer.renderToString(
+        <App initialProps={response} >
+          <HomeNoHydrate />
+        </App>
+      );
       const html = template(response, component);
-    
-      res.send(html)
+
+      res.send(html);
     }
   );
 });

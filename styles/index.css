@@ -1,0 +1,26 @@
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr auto 3fr;
+    grid-template-rows: 25% auto 3fr;
+    grid-template-areas: 
+    "header header header"
+    "side main main"
+    "footer footer footer";
+}
+
+.header {
+    grid-area: header
+}
+
+.content {
+    grid-area: main
+}
+
+.side {
+    grid-area: side
+}
+
+.footer {
+    grid-area: footer
+}

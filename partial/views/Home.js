@@ -1,18 +1,28 @@
 import React from 'react';
-import Layout from './Layout';
-import Header from './Header';
-import PokemonList from './PokemonList';
-import withHydration from '../server/withHydration';
-import HidrationData from '../server/HydrationData';
+import Layout from '../../components/views/Layout';
+import Header from '../../components/views/Header';
+import Footer from '../../components/views/Footer';
+import PokemonList from '../../components/views/PokemonList';
+import ClickableBox from '../../components/atoms/clickableBox';
+import withHydration from '../../services/hydration/withHydration';
+import HidrationData from '../../services/hydration/HydrationData';
 
 const HydratedPokemonList = withHydration(PokemonList);
+const HydratedClickableBox = withHydration(ClickableBox);
 
 function Home({list}) {
   return (
     <Layout>
       <Header />
-      <HydratedPokemonList list={list} />
+      <div className="side">
+      <HydratedClickableBox />
+      <ClickableBox />
+      </div>
+      <div className="content">
+        <HydratedPokemonList list={list} />
+      </div>
       <HidrationData />
+      <Footer />
     </Layout>
   );
 }

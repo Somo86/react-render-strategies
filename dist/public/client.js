@@ -86,6 +86,30 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/atoms/clickableBox.js":
+/*!******************************************!*\
+  !*** ./components/atoms/clickableBox.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\nvar pokeData = [{\n  name: 'Bulbasur',\n  color: 'green'\n}, {\n  name: 'Charmander',\n  color: 'red'\n}, {\n  name: 'Pikachu',\n  color: 'yellow'\n}];\n\nvar ClickableBox = function ClickableBox() {\n  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useState\"])(0),\n      _useState2 = _slicedToArray(_useState, 2),\n      index = _useState2[0],\n      setIndex = _useState2[1];\n\n  var handleChange = function handleChange(e) {\n    index < 2 ? setIndex(index + 1) : setIndex(0);\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"card\",\n    style: {\n      backgroundColor: pokeData[index].color\n    }\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"card-body\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h5\", {\n    className: \"card-title\"\n  }, pokeData[index].name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", {\n    onClick: handleChange,\n    className: \"btn btn-primary\"\n  }, \"Change me\")));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ClickableBox);\n\n//# sourceURL=webpack:///./components/atoms/clickableBox.js?");
+
+/***/ }),
+
+/***/ "./components/views/PokemonList.js":
+/*!*****************************************!*\
+  !*** ./components/views/PokemonList.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction PokemonList(_ref) {\n  var _ref$list = _ref.list,\n      list = _ref$list === void 0 ? [] : _ref$list;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, list.map(function (poke, index) {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n      className: \"card\",\n      key: \"poke_\".concat(index)\n    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n      className: \"card-body\"\n    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"h5\", {\n      className: \"card-title\"\n    }, poke.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, \"More info:\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", null, poke.url)));\n  }));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (PokemonList);\n\n//# sourceURL=webpack:///./components/views/PokemonList.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/polyfill/lib/index.js":
 /*!***************************************************!*\
   !*** ./node_modules/@babel/polyfill/lib/index.js ***!
@@ -3696,18 +3720,6 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./partial/client/hydrate.js":
-/*!***********************************!*\
-  !*** ./partial/client/hydrate.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ \"./utils/index.js\");\n\n\n\n/**\n * \n * @param {*} components -> All components to hydrate in a single array\n * @param {*} container -> Container where to find all markups\n * \"application/hydration-marker\" markup contain all components id that need to be hydrate\n * \"application/hydration-data\" markup contain all components data saved as {[component id]: {[name][props]}}\n * foreach marker get markup id and parent (wrapper container)\n * find each id related to each component\n */\n\nfunction hydrate() {\n  var components = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];\n  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;\n  var markers = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getMarkers\"])(container); // ids to hydrate\n\n  var dataScript = container.querySelector(_utils__WEBPACK_IMPORTED_MODULE_2__[\"DATA_SELECTOR\"]); //component name - id - props to hydrate\n\n  var data = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getData\"])(dataScript); //parsed to JSON\n\n  var componentMap = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getComponentMap\"])(components); //componentName: Component\n  // TODO import and run this in DEV env only\n  //showHydrationWarnings(dataScript, data, components, markers);\n\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    for (var _iterator = markers[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var marker = _step.value;\n\n      var _readMarker = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"readMarker\"])(marker),\n          id = _readMarker.id,\n          parent = _readMarker.parent; // marker id and container\n\n\n      var Component = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getComponent\"])(componentMap, data, id); //component name related to id\n\n      var props = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getProps\"])(data, id); // props related to id\n\n      if (Component) react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props), parent); // render component rehydrated to container\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator[\"return\"] != null) {\n        _iterator[\"return\"]();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (hydrate);\n\n//# sourceURL=webpack:///./partial/client/hydrate.js?");
-
-/***/ }),
-
 /***/ "./partial/client/index.js":
 /*!*********************************!*\
   !*** ./partial/client/index.js ***!
@@ -3716,19 +3728,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hydrate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hydrate */ \"./partial/client/hydrate.js\");\n/* harmony import */ var _views_PokemonList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/PokemonList */ \"./partial/views/PokemonList.js\");\n\n\nObject(_hydrate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])([_views_PokemonList__WEBPACK_IMPORTED_MODULE_1__[\"default\"]], document);\n\n//# sourceURL=webpack:///./partial/client/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_hydration_hydrate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/hydration/hydrate */ \"./services/hydration/hydrate.js\");\n/* harmony import */ var _components_views_PokemonList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/views/PokemonList */ \"./components/views/PokemonList.js\");\n/* harmony import */ var _components_atoms_clickableBox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/atoms/clickableBox */ \"./components/atoms/clickableBox.js\");\n\n\n\nObject(_services_hydration_hydrate__WEBPACK_IMPORTED_MODULE_0__[\"default\"])([_components_views_PokemonList__WEBPACK_IMPORTED_MODULE_1__[\"default\"], _components_atoms_clickableBox__WEBPACK_IMPORTED_MODULE_2__[\"default\"]], document);\n\n//# sourceURL=webpack:///./partial/client/index.js?");
 
 /***/ }),
 
-/***/ "./partial/views/PokemonList.js":
-/*!**************************************!*\
-  !*** ./partial/views/PokemonList.js ***!
-  \**************************************/
+/***/ "./services/hydration/hydrate.js":
+/*!***************************************!*\
+  !*** ./services/hydration/hydrate.js ***!
+  \***************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction PokemonList(_ref) {\n  var _ref$list = _ref.list,\n      list = _ref$list === void 0 ? [] : _ref$list;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, list.map(function (poke, index) {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", {\n      key: \"poke_\".concat(index)\n    }, poke.name);\n  }));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (PokemonList);\n\n//# sourceURL=webpack:///./partial/views/PokemonList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ \"./utils/index.js\");\n\n\n\n/**\n * \n * @param {*} components -> All components to hydrate in a single array\n * @param {*} container -> Container where to find all markups\n * \"application/hydration-marker\" markup contain all components id that need to be hydrate\n * \"application/hydration-data\" markup contain all components data saved as {[component id]: {[name][props]}}\n * foreach marker get markup id and parent (wrapper container)\n * find each id related to each component\n */\n\nfunction hydrate() {\n  var components = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];\n  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;\n  var markers = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getMarkers\"])(container); // ids to hydrate\n\n  var dataScript = container.querySelector(_utils__WEBPACK_IMPORTED_MODULE_2__[\"DATA_SELECTOR\"]); //component name - id - props to hydrate\n\n  var data = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getData\"])(dataScript); //parsed to JSON\n\n  var componentMap = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getComponentMap\"])(components); //componentName: Component\n  // TODO import and run this in DEV env only\n  //showHydrationWarnings(dataScript, data, components, markers);\n\n  var _iteratorNormalCompletion = true;\n  var _didIteratorError = false;\n  var _iteratorError = undefined;\n\n  try {\n    for (var _iterator = markers[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n      var marker = _step.value;\n\n      var _readMarker = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"readMarker\"])(marker),\n          id = _readMarker.id,\n          parent = _readMarker.parent; // marker id and container\n\n\n      var Component = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getComponent\"])(componentMap, data, id); //component name related to id\n\n      var props = Object(_utils__WEBPACK_IMPORTED_MODULE_2__[\"getProps\"])(data, id); // props related to id\n\n      if (Component) react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props), parent); // render component rehydrated to container\n    }\n  } catch (err) {\n    _didIteratorError = true;\n    _iteratorError = err;\n  } finally {\n    try {\n      if (!_iteratorNormalCompletion && _iterator[\"return\"] != null) {\n        _iterator[\"return\"]();\n      }\n    } finally {\n      if (_didIteratorError) {\n        throw _iteratorError;\n      }\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (hydrate);\n\n//# sourceURL=webpack:///./services/hydration/hydrate.js?");
 
 /***/ }),
 

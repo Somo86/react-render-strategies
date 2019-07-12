@@ -19,6 +19,8 @@ app.get('/', (req, res) => {
                 `<!doctype html>
                     <html>
                         <head>
+                            <link rel="stylesheet" type="text/css" href="/static/index.css">
+                            <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css">
                         </head>
                         <body>
                             <div id="root">${component}</div>

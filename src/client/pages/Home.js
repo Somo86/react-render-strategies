@@ -1,20 +1,11 @@
 import React, {useContext} from 'react';
 import fetch from '../../services/fetch';
 import {AppContext} from '../App';
+import PokemonList from '../../../components/views/PokemonList';
 
-const Home = (props) => {
+const Home = () => {
     const {pokemons = []} = useContext(AppContext);
-    
-    return (
-    <>
-    {
-        pokemons.map(poke => {
-            return <p>{poke.name}</p>;
-        })
-    }
-    </>
-    )
-        
+    return <PokemonList list={pokemons} />; 
 }
 
 Home.getInitialProps = async() => {

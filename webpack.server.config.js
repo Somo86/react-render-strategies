@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const js = {
     test: /\.js$/,
@@ -42,6 +43,12 @@ const js = {
     module: {
       rules: [js]
     },
+    plugins: [
+      new CopyPlugin([
+        { from: 'styles/index.css', to: path.resolve(__dirname, 'dist/public') },
+        { from: 'other', to: 'public' },
+      ]),
+    ],
     output: {
       path: path.resolve(__dirname, 'dist/public'),
       filename: '[name]'

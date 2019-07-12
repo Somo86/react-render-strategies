@@ -2,7 +2,7 @@ import React from 'react';
 
 function Layout({children}) {
     return (
-      <div>
+      <div className="grid">
         { children }
       </div>
     );

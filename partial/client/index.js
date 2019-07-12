@@ -1,4 +1,8 @@
-import hydrate from './hydrate';
-import PokemonList from '../views/PokemonList';
+import hydrate from '../../services/hydration/hydrate';
+import PokemonList from '../../components/views/PokemonList';
+import ClickableBox from '../../components/atoms/clickableBox';
 
-hydrate([PokemonList], document);
+hydrate([
+    PokemonList,
+    ClickableBox,
+], document);

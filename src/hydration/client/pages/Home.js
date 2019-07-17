@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import fetch from '../../services/fetch';
+import fetch from '../../../services/fetch';
 import {AppContext} from '../App';
 import PokemonList from '../../../components/views/PokemonList';
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import fetch from '../../services/fetch';
+import fetch from '../../../services/fetch';
 import PokemonList from '../../../components/views/PokemonList';
 
 const HomeNoHydrate = () => {

@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && concurrently \"webpack --watch\" \"nodemon dist\"",
-    "partial": "webpack --config webpack.server.config.js && concurrently \"webpack --watch --config webpack.server.config.js\" \"nodemon dist\""
+    "start": "webpack --env.render=hydration && concurrently \"webpack --watch\" \"nodemon dist\"",
+    "partial": "webpack --env.render=partial && concurrently \"webpack --watch \" \"nodemon dist\"",
+    "lazy": "webpack --env.render=lazy && concurrently \"webpack --watch \" \"nodemon dist\""
   },
   "repository": {
     "type": "git",
